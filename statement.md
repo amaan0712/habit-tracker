@@ -44,6 +44,32 @@ notification).
   concepts: OOP design, exception handling, collections/streams, JDBC, and
   concurrency, applied to a single cohesive application
 
+## Non-Functional Requirements
+
+- **Reliability** — invalid input (bad numbers, malformed dates) is caught and
+  re-prompted rather than crashing the CLI; database errors are caught and
+  reported per-operation instead of terminating the session; a failure in
+  the background reminder check is logged and skipped rather than crashing
+  the whole application.
+- **Maintainability** — the codebase is split into clearly separated layers
+  (`model`, `service`, `dao`, `streak`, `io`, `concurrency`, `cli`), so a
+  change to, say, the persistence mechanism would only touch the `dao`
+  package without affecting business logic in `service` or `streak`.
+- **Usability** — the CLI presents a numbered menu with clear prompts at
+  every step, validates numeric input in a retry loop rather than crashing
+  on bad input, and gives specific, human-readable error messages (e.g.
+  naming the exact habit and date on a duplicate log attempt).
+- **Resource efficiency** — a single shared JDBC connection is reused across
+  all database operations rather than opening a new one per query; the
+  background reminder runs on a single dedicated daemon thread via
+  `ScheduledExecutorService` rather than spawning a new thread per check;
+  SQLite is embedded and file-based, avoiding the overhead of a separate
+  database server process.
+- **Data integrity** — the database schema enforces constraints (a `UNIQUE`
+  constraint on `(habit_id, log_date)`, `CHECK` constraints on habit type
+  and frequency values) as a second line of defense underneath the
+  application-level validation in `HabitService`.
+
 ## High-Level Features
 
 - **Habit creation** — choose a habit type (boolean, countable, or timed),
