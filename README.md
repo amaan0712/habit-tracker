@@ -125,7 +125,7 @@ habit-tracker/
 
 A full CLI session — user login, creating a habit, logging an entry, and viewing the resulting streak:
 
-![Uploading Screenshot 2026-09-17 104158.png…]()
+![Habit Tracker CLI](docs/Screenshot 2026-09-17 104158.png)
 
 
 ## Design Diagrams
