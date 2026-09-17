@@ -125,8 +125,6 @@ Full design diagrams are available in the `docs/` folder:
 **System Architecture** — layered structure from the CLI down to SQLite
 ![System Architecture Diagram](docs/system-architecture.svg)
 
-![System Architecture Diagram](docs/system-architecture.svg)
-=======
 **Use Case Diagram** — everything a user (and the background reminder) can do
 ![Use Case Diagram](docs/use-case-diagram.svg)
 
