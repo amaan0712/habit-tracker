@@ -125,7 +125,6 @@ Full design diagrams are available in the `docs/` folder:
 **System Architecture** — layered structure from the CLI down to SQLite
 ![System Architecture Diagram](docs/system-architecture.svg)
 
-<<<<<<< HEAD
 ![System Architecture Diagram](docs/system-architecture.svg)
 =======
 **Use Case Diagram** — everything a user (and the background reminder) can do
@@ -143,7 +142,6 @@ Full design diagrams are available in the `docs/` folder:
 **ER Diagram** — the three-table SQLite schema
 ![ER Diagram](docs/er-diagram.svg)
 
->>>>>>> d57c672 (docs: embed all design diagrams inline in README)
 ## Future Enhancements
 
 - Weekly aggregate view showing a full week's completion grid
