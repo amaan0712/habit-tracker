@@ -129,8 +129,7 @@ Full design diagrams are available in the `docs/` folder:
 - Sequence Diagram — the full flow of logging a habit entry
 - ER Diagram — the three-table SQLite schema
 
-![System Architecture Diagram](docs/System%20Architecture%20Diagram.svg)
-
+![System Architecture Diagram](docs/system-architecture.svg)
 ## Future Enhancements
 
 - Weekly aggregate view showing a full week's completion grid
