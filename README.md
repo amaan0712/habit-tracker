@@ -122,14 +122,28 @@ A full CLI session — user login, creating a habit, logging an entry, and viewi
 
 Full design diagrams are available in the `docs/` folder:
 
-- System Architecture Diagram — layered structure from the CLI down to SQLite
-- Use Case Diagram — everything a user (and the background reminder) can do
-- Workflow / Process Flow Diagram — the application's runtime lifecycle
-- Class Diagram — the Habit OOP hierarchy and its relationships
-- Sequence Diagram — the full flow of logging a habit entry
-- ER Diagram — the three-table SQLite schema
-
+**System Architecture** — layered structure from the CLI down to SQLite
 ![System Architecture Diagram](docs/system-architecture.svg)
+
+<<<<<<< HEAD
+![System Architecture Diagram](docs/system-architecture.svg)
+=======
+**Use Case Diagram** — everything a user (and the background reminder) can do
+![Use Case Diagram](docs/use-case-diagram.svg)
+
+**Workflow / Process Flow Diagram** — the application's runtime lifecycle
+![Workflow Diagram](docs/workflow-diagram.svg)
+
+**Class Diagram** — the Habit OOP hierarchy and its relationships
+![Class Diagram](docs/class-diagram.svg)
+
+**Sequence Diagram** — the full flow of logging a habit entry
+![Sequence Diagram](docs/sequence-diagram.svg)
+
+**ER Diagram** — the three-table SQLite schema
+![ER Diagram](docs/er-diagram.svg)
+
+>>>>>>> d57c672 (docs: embed all design diagrams inline in README)
 ## Future Enhancements
 
 - Weekly aggregate view showing a full week's completion grid
