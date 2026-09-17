@@ -1,17 +1,10 @@
 # Habit Tracker with Streak Analytics & Social Leaderboard
 
-A command-line Java application for tracking daily/weekly habits, computing
-streaks and completion rates, and ranking users on a leaderboard. Built for
-the "Programming in Java" course project.
+A command-line Java application for tracking daily/weekly habits, computing streaks and completion rates, and ranking users on a leaderboard. Built for the "Programming in Java" course project.
 
 ## Overview
 
-Users create habits of three kinds — simple done/not-done habits, countable
-habits (e.g. "8 glasses of water"), and timed habits (e.g. "30 minutes of
-exercise") — and log daily progress against them. The app computes current
-and longest streaks, completion rates, and a cross-user leaderboard, all
-persisted to a local SQLite database. A background thread periodically
-reminds the console user of any habit not yet logged for the day.
+Users create habits of three kinds — simple done/not-done habits, countable habits (e.g. "8 glasses of water"), and timed habits (e.g. "30 minutes of exercise") — and log daily progress against them. The app computes current and longest streaks, completion rates, and a cross-user leaderboard, all persisted to a local SQLite database. A background thread periodically reminds the console user of any habit not yet logged for the day.
 
 ## Features
 
@@ -37,38 +30,41 @@ reminds the console user of any habit not yet logged for the day.
 - **Maven 3.8+** — verify with `mvn -version`
 - **Git** — to clone the repository
 
-No separate database installation is required. SQLite runs as a single local
-file (`habits.db`), created automatically the first time the app runs.
+No separate database installation is required. SQLite runs as a single local file (`habits.db`), created automatically the first time the app runs.
 
 ## Setup & Installation
 
 1. Clone the repository:
-   ```
-   git clone https://github.com/amaan0712/habit-tracker.git
-   cd habit-tracker
-   ```
+
+```
+git clone https://github.com/amaan0712/habit-tracker.git
+cd habit-tracker
+```
 
 2. Compile the project (this also downloads all dependencies automatically):
-   ```
-   mvn clean compile
-   ```
+
+```
+mvn clean compile
+```
 
 3. Run the test suite (optional but recommended):
-   ```
-   mvn test
-   ```
+
+```
+mvn test
+```
 
 ## Running the Application
 
 From the project root:
+
 ```
 mvn compile exec:java
 ```
 
-On first run, this creates `habits.db` in the project root automatically —
-no manual database setup needed.
+On first run, this creates `habits.db` in the project root automatically — no manual database setup needed.
 
 Alternatively, build a runnable JAR and launch it directly:
+
 ```
 mvn clean package
 java -jar target/habit-tracker-1.0.0.jar
@@ -76,25 +72,20 @@ java -jar target/habit-tracker-1.0.0.jar
 
 ## Usage
 
-1. On startup, enter a username. If it doesn't exist yet, a new account is
-   created automatically; if it does, you're logged in.
-2. From the menu, create habits, log daily entries, view your streaks, check
-   the leaderboard, or export a CSV report.
-3. A background reminder checks every 5 minutes for any habit not yet logged
-   today and prints a notice to the console (this interval is intentionally
-   short for demo purposes; a real deployment would check once every 24 hours).
+1. On startup, enter a username. If it doesn't exist yet, a new account is created automatically; if it does, you're logged in.
+2. From the menu, create habits, log daily entries, view your streaks, check the leaderboard, or export a CSV report.
+3. A background reminder checks every 5 minutes for any habit not yet logged today and prints a notice to the console (this interval is intentionally short for demo purposes; a real deployment would check once every 24 hours).
 4. Choose "Exit" from the menu to shut down cleanly.
 
 ## Testing
 
 Run:
+
 ```
 mvn test
 ```
 
-This runs the JUnit 5 suite covering streak calculation logic (current
-streak, longest streak, handling gaps and incomplete entries) and habit
-creation validation (rejecting non-positive targets).
+This runs the JUnit 5 suite covering streak calculation logic (current streak, longest streak, handling gaps and incomplete entries) and habit creation validation (rejecting non-positive targets).
 
 ## Project Structure
 
@@ -125,21 +116,20 @@ habit-tracker/
 
 A full CLI session — user login, creating a habit, logging an entry, and viewing the resulting streak:
 
-![Habit Tracker CLI](docs/Screenshot 2026-09-17 104158.png)
-
+![Habit Tracker CLI](docs/screenshot.png)
 
 ## Design Diagrams
 
-Full design diagrams are available in the [`docs/`](docs/) folder:
+Full design diagrams are available in the `docs/` folder:
 
-- [System Architecture Diagram](docs/architecture_diagram.svg) — layered structure from the CLI down to SQLite
-- [Use Case Diagram](docs/use_case_diagram.svg) — everything a user (and the background reminder) can do
-- [Workflow / Process Flow Diagram](docs/workflow_diagram.svg) — the application's runtime lifecycle
-- [Class Diagram](docs/class_diagram.svg) — the `Habit` OOP hierarchy and its relationships
-- [Sequence Diagram](docs/sequence_diagram.svg) — the full flow of logging a habit entry
-- [ER Diagram](docs/er_diagram.svg) — the three-table SQLite schema
+- System Architecture Diagram — layered structure from the CLI down to SQLite
+- Use Case Diagram — everything a user (and the background reminder) can do
+- Workflow / Process Flow Diagram — the application's runtime lifecycle
+- Class Diagram — the Habit OOP hierarchy and its relationships
+- Sequence Diagram — the full flow of logging a habit entry
+- ER Diagram — the three-table SQLite schema
 
-![System Architecture Diagram](docs/architecture_diagram.svg)
+![System Architecture Diagram](docs/System%20Architecture%20Diagram.svg)
 
 ## Future Enhancements
 
@@ -150,7 +140,7 @@ Full design diagrams are available in the [`docs/`](docs/) folder:
 
 ## Author
 
-**Amaan Farooqui**
+Amaan Farooqui
 GitHub: [amaan0712](https://github.com/amaan0712)
 
 Built as a course project for "Programming in Java," demonstrating object-oriented design, custom exception handling, the Collections/Streams API, JDBC persistence, and concurrency in a single cohesive Java application.
